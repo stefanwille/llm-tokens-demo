@@ -3,6 +3,7 @@
 import { Tiktoken } from "js-tiktoken/lite";
 import o200k_base from "js-tiktoken/ranks/o200k_base";
 import { useState } from "react";
+import { Input } from "@/components/ui/input";
 
 const enc = new Tiktoken(o200k_base);
 
@@ -18,8 +19,7 @@ export function HomeComponent() {
       <h1>A small demonstration that makes LLM tokenization more tangible.</h1>
       <div>
         Input your text to encode and decode:
-        <input
-          className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+        <Input
           type="text"
           value={inputText}
           onChange={(e) => {
