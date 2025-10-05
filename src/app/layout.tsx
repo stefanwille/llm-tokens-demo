@@ -38,10 +38,6 @@ export default function RootLayout({
           {/* Main Content */}
           <main className="flex-1 p-4">
             {/* Navbar */}
-            <header className="mb-4 border-b pb-4">
-              {/* Navbar content here */}
-              Navbar Content
-            </header>
             {/* Page content */}
             <div className="p-4">{children}</div>
           </main>

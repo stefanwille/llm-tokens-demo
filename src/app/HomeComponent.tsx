@@ -74,7 +74,7 @@ export function HomeComponent() {
 
   return (
     <div className="">
-      <h1>A small demonstration that makes LLM tokenization more tangible.</h1>
+      <h1>A demonstration that makes LLM tokens more tangible.</h1>
       <div>
         Input your text to tokenize and decode:
         <Input
