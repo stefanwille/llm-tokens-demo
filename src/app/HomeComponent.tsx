@@ -63,19 +63,21 @@ export function HomeComponent() {
           of a word, a syllable, or a character.
           <br />
           <br />
-          <Label>Each token id can be decoded back to its text fragment (token string):</Label>
+          <Label>
+            Each token id can be decoded back to its text fragment (token
+            string):
+          </Label>
           <Code>{JSON.stringify(tokenStrings)}</Code>
           <br />
           <br />
           The table below shows how each token id maps to its text:
         </div>
         <TokensTable tokenIDs={tokenIDs} tokenStrings={tokenStrings} />
-
         <br />
-        <div>
+        <Label>
           Joining the token strings together reconstructs the original text:{" "}
-          <Code>{tokenStrings.join("")}</Code>
-        </div>
+        </Label>
+        <Code>{tokenStrings.join("")}</Code>
       </div>
     </div>
   );
