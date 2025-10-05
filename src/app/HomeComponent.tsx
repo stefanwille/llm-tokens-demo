@@ -84,37 +84,6 @@ export function HomeComponent() {
           }}
         />
       </div>{" "}
-      <Table>
-        <TableCaption>A list of your recent invoices.</TableCaption>
-        <TableHeader>
-          <TableRow>
-            {tokens.map((_token, index) => (
-              // biome-ignore lint/suspicious/noArrayIndexKey: This is correct
-              <TableHead key={index}>{index}</TableHead>
-            ))}
-          </TableRow>
-        </TableHeader>
-        <TableBody>
-          <TableRow>
-            {tokens.map((_token, index) => (
-              // biome-ignore lint/suspicious/noArrayIndexKey: This is correct
-              <TableCell key={index}>{tokens[index]}</TableCell>
-            ))}
-          </TableRow>
-          <TableRow>
-            {tokens.map((_token, index) => (
-              // biome-ignore lint/suspicious/noArrayIndexKey: This is correct
-              <TableCell key={index}>{decodedTokens[index]}</TableCell>
-            ))}
-          </TableRow>
-        </TableBody>
-        <TableFooter>
-          <TableRow>
-            <TableCell colSpan={3}>Total</TableCell>
-            <TableCell className="text-right">$2,500.00</TableCell>
-          </TableRow>
-        </TableFooter>
-      </Table>
       <div>
         Tokens: <Code>{JSON.stringify(tokens)}</Code>
         Decoded tokens: <Code>{JSON.stringify(decodedTokens)}</Code>
@@ -124,6 +93,29 @@ export function HomeComponent() {
           <b>{matches ? "true" : "false"}</b>
         </div>
       </div>
+      <Table>
+        <TableHeader>
+          <TableRow>
+            <TableHead className="w-[100px]">Index</TableHead>
+            <TableHead>Token</TableHead>
+            <TableHead>Token decoded back to text</TableHead>
+          </TableRow>
+        </TableHeader>
+        <TableBody>
+          {tokens.map((token, index) => (
+            <TableRow key={`${index - token}`}>
+              <TableCell>{index}</TableCell>
+              <TableCell>{tokens[index]}</TableCell>
+              <TableCell>{decodedTokens[index]}</TableCell>
+            </TableRow>
+          ))}
+        </TableBody>
+        <TableFooter>
+          <TableRow>
+            <TableCell colSpan={3}>Total token: {tokens.length}</TableCell>
+          </TableRow>
+        </TableFooter>
+      </Table>
     </div>
   );
 }
