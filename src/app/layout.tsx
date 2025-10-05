@@ -30,9 +30,22 @@ export default function RootLayout({
       >
         <div className="flex min-h-screen flex-col md:flex-row">
           {/* Sidebar */}
-          <aside className="w-64 border-r p-4 md:block hidden">
-            {/* Sidebar content here */}
-            <a href="https://www.stefanwille.com">Stefan Wille</a>
+          <aside className="w-64 border-r p-6 md:block hidden bg-gray-50 dark:bg-gray-900">
+            <div className="flex flex-col gap-4">
+              <a
+                href="https://www.stefanwille.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-lg font-semibold text-gray-900 dark:text-gray-100 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+              >
+                Stefan Wille
+              </a>
+              <p className="text-sm text-gray-600 dark:text-gray-400">
+                Software Developer
+                <br />
+                Berlin, Germany
+              </p>
+            </div>
           </aside>
 
           {/* Main Content */}
