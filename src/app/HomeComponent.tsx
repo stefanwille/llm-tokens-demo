@@ -5,13 +5,13 @@ import o200k_base from "js-tiktoken/ranks/o200k_base";
 import { useState } from "react";
 import { Input } from "@/components/ui/input";
 
-const enc = new Tiktoken(o200k_base);
+const encoder = new Tiktoken(o200k_base);
 
 export function HomeComponent() {
   const [inputText, setInputText] = useState("Hello World!");
 
-  const tokens = enc.encode(inputText);
-  const decoded = enc.decode(tokens);
+  const tokens = encoder.encode(inputText);
+  const decoded = encoder.decode(tokens);
   const matches = decoded === inputText;
 
   return (
