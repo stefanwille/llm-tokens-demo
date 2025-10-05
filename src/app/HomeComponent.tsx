@@ -5,7 +5,6 @@ import o200k_base from "js-tiktoken/ranks/o200k_base";
 import { useState } from "react";
 import { Input } from "@/components/ui/input";
 import { Code } from "@/app/Code";
-import { Label } from "@/components/ui/label";
 import { TokensTable } from "./TokensTable";
 
 const encoder = new Tiktoken(o200k_base);
@@ -20,10 +19,10 @@ export function HomeComponent() {
     <div className="">
       <header>
         <h1 className="mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl dark:text-white">
-          LLM Tokens Demo
+          LLM Tokens Playground
         </h1>
         <p className="text-lg font-normal text-gray-500 lg:text-xl dark:text-gray-400">
-          A demonstration that makes LLM tokens more tangible
+          A playground that makes LLM tokens more tangible
         </p>
         <div className="mb-12"></div>
       </header>
@@ -31,15 +30,13 @@ export function HomeComponent() {
       <div>
         <div>
           When you send a message to an LLM, it doesn't work with your text
-          directly as text. It breaks it up into smaller pieces, called{" "}
-          <b>tokens</b>.
+          directly. It breaks it up into smaller pieces, called <b>tokens</b>.
           <br />
           <br />
-          <Label className="mb-4" htmlFor="inputText">
-            Enter some text to see how it's tokenized:
-          </Label>
+          Enter some text to see how it's tokenized:
+          <br />
           <Input
-            className="w-[400px]"
+            className="w-[400px] -ml-0"
             type="text"
             name="inputText"
             value={inputText}
