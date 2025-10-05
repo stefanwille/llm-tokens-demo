@@ -30,6 +30,11 @@ export function HomeComponent() {
 
       <div>
         <div>
+          When you send a message to an LLM, it doesn't work with your text
+          directly as text. It breaks it up into smaller pieces, called{" "}
+          <b>tokens</b>.
+          <br />
+          <br />
           <Label className="mb-4" htmlFor="inputText">
             Enter some text to see how it's tokenized:
           </Label>
@@ -46,38 +51,41 @@ export function HomeComponent() {
           <div className="mb-4"></div>
         </div>
         <div>
-          An LLM breaks up your text into smaller pieces, called <b>tokens</b>.
-          It encodes your text as a sequence of these tokens.
+          The LLM encodes your text as a sequence of tokens, of small text
+          fragments.
           <br />
-          Tokens are represented as integers, and the integers are called{" "}
+          <Code>{JSON.stringify(tokenStrings)}</Code>
+          <br />
+          <br />
+          The LLM's tokenizer has a fixed set of tokens - a token vocabulary, if
+          you will.
+          <br />
+          It represents these tokens as integers, and the integers are called{" "}
           <b>token ids</b>.
           <br />
           <br />
-          <Label>
-            This is your text represented as a sequence of token ids:
-          </Label>
-          <Code>{JSON.stringify(tokenIDs)}</Code>
+          This is your text represented as a sequence of token ids:
           <br />
+          <Code>{JSON.stringify(tokenIDs)}</Code>
           <br />
           Each token id represents a fragment in your text - a word, a fraction
           of a word, a syllable, or a character.
-          <br />
-          <br />
-          <Label>
-            Each token id can be decoded back to its text fragment (token
-            string):
-          </Label>
-          <Code>{JSON.stringify(tokenStrings)}</Code>
           <br />
           <br />
           The table below shows how each token id maps to its text:
         </div>
         <TokensTable tokenIDs={tokenIDs} tokenStrings={tokenStrings} />
         <br />
-        <Label>
-          Joining the token strings together reconstructs the original text:{" "}
-        </Label>
+        Joining the token strings together reconstructs the original text:{" "}
+        <br />
         <Code>{tokenStrings.join("")}</Code>
+        <br />
+        The LLM does not use your message text. It works with token ids
+        internally. And when it generates a reply, it uses token ids too.
+        <br />
+        <br />
+        The token vocabulary of each LLM may be different - each vendor chooses
+        their own tokenizer, on a per model basis.
       </div>
     </div>
   );
