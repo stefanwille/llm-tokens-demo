@@ -4,17 +4,9 @@ import { Tiktoken } from "js-tiktoken/lite";
 import o200k_base from "js-tiktoken/ranks/o200k_base";
 import { useState } from "react";
 import { Input } from "@/components/ui/input";
-import { Code } from "@/components/Code";
-import {
-  Table,
-  TableBody,
-  TableCell,
-  TableFooter,
-  TableHead,
-  TableHeader,
-  TableRow,
-} from "@/components/ui/table";
+import { Code } from "@/app/Code";
 import { Label } from "@/components/ui/label";
+import { TokensTable } from "./TokensTable";
 
 const encoder = new Tiktoken(o200k_base);
 
@@ -51,10 +43,8 @@ export function HomeComponent() {
               setInputText(e.target.value);
             }}
           />
+          <div className="mb-4"></div>
         </div>
-
-        <div className="mb-4"></div>
-
         <div>
           An LLM generates tokens for your text and represents your text as a
           sequence of these tokens.
@@ -78,34 +68,12 @@ export function HomeComponent() {
           To make the connection between the token ids and the token strings
           clearer, this is a table that shows the mapping:
         </div>
-        <Table>
-          <TableHeader>
-            <TableRow>
-              <TableHead className="w-[20px]">Index</TableHead>
-              <TableHead className="w-[3px]">Token ID</TableHead>
-              <TableHead>Token Text</TableHead>
-            </TableRow>
-          </TableHeader>
-          <TableBody>
-            {tokenIDs.map((token, index) => (
-              <TableRow key={`${index - token}`}>
-                <TableCell className="text-right">{index}</TableCell>
-                <TableCell className="text-right">{tokenIDs[index]}</TableCell>
-                <TableCell>{tokenStrings[index]}</TableCell>
-              </TableRow>
-            ))}
-          </TableBody>
-          <TableFooter>
-            <TableRow>
-              <TableCell colSpan={3}>Total token: {tokenIDs.length}</TableCell>
-            </TableRow>
-          </TableFooter>
-        </Table>
+        <TokensTable tokenIDs={tokenIDs} tokenStrings={tokenStrings} />
 
         <br />
         <div>
-          If we concatenate the decoded tokens, we get the original input back:{" "}
-          <Code>{tokenStrings.join("")}</Code>
+          If we concatenate the decoded token strings, we get the original text
+          back: <Code>{tokenStrings.join("")}</Code>
         </div>
       </div>
     </div>
