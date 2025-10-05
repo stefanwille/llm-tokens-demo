@@ -30,8 +30,11 @@ export function HomeComponent() {
       </div>{" "}
       <div>
         Tokens: <Code>{JSON.stringify(tokens)}</Code>
-        <div>Tokens decoded by to a string: {decoded}</div>
-        matches: {matches ? "true" : "false"}
+        <div>Tokens decoded back to a string: {decoded}</div>
+        <div>
+          Are original text and the decoded string identical:{" "}
+          <b>{matches ? "true" : "false"}</b>
+        </div>
       </div>
     </div>
   );
