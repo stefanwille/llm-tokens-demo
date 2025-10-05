@@ -4,6 +4,7 @@ import { Tiktoken } from "js-tiktoken/lite";
 import o200k_base from "js-tiktoken/ranks/o200k_base";
 import { useState } from "react";
 import { Input } from "@/components/ui/input";
+import { Code } from "@/components/Code";
 
 const encoder = new Tiktoken(o200k_base);
 
@@ -18,7 +19,7 @@ export function HomeComponent() {
     <div className="flex flex-col items-start justify-start gap-4">
       <h1>A small demonstration that makes LLM tokenization more tangible.</h1>
       <div>
-        Input your text to encode and decode:
+        Input your text to tokenize and decode:
         <Input
           type="text"
           value={inputText}
@@ -28,11 +29,8 @@ export function HomeComponent() {
         />
       </div>{" "}
       <div>
-        encoded:{" "}
-        <pre className="overflow-auto whitespace-pre">
-          <code className="font-mono">{JSON.stringify(tokens, null, 2)}</code>
-        </pre>
-        <div>decoded: {decoded}</div>
+        Tokens: <Code>{JSON.stringify(tokens)}</Code>
+        <div>Tokens decoded by to a string: {decoded}</div>
         matches: {matches ? "true" : "false"}
       </div>
     </div>
