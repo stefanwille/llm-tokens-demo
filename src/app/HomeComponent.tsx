@@ -1,5 +1,6 @@
 "use client";
 
+import { cn } from "@/lib/utils";
 import { Tiktoken } from "js-tiktoken/lite";
 import o200k_base from "js-tiktoken/ranks/o200k_base";
 import { useState } from "react";
@@ -72,7 +73,7 @@ export function HomeComponent() {
   const matches = decoded === inputText;
 
   return (
-    <div className="flex flex-col items-start justify-start gap-4">
+    <div className="">
       <h1>A small demonstration that makes LLM tokenization more tangible.</h1>
       <div>
         Input your text to tokenize and decode:
