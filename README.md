@@ -1,5 +1,7 @@
 # LLM Tokens Playground
 
+A playground that makes LLM tokens and tokenization easier to understand.
+
 See it live: https://llm-tokens-playground.stefanwille.com
 
 ## Getting Started
@@ -14,15 +16,10 @@ pnpm dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font).
-
-
 ## Deploy on Vercel
 
 Deployed on Vercel.
 
 ## Kudos
 
-Built with Tiktoken: https://github.com/dqbd/tiktoken
+Built with the Tiktoken tokenizer library: https://github.com/dqbd/tiktoken
