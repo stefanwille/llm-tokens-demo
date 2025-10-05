@@ -14,6 +14,7 @@ export function HomeComponent() {
 
   return (
     <div className="flex flex-col items-start justify-start gap-4">
+      <h1>A small demonstration that makes LLM tokenization more tangible.</h1>
       <div>
         Input your text to encode and decode:
         <input
