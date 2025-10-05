@@ -63,15 +63,17 @@ export function HomeComponent() {
           ids.
           <br />
           <br />
-          This is your text as a sequence of token ids:
+          <Label>This is your text as a sequence of token ids:</Label>
           <Code>{JSON.stringify(tokenIDs)}</Code>
           <br />
-          Each token ids represents a specific fragment, work, syllable or
-          character in your text.
-          <div>
-            These are the tokens as strings:
-            <Code>{JSON.stringify(tokenStrings)}</Code>
-          </div>
+          <br />
+          Each token id represents a fragment in your text - a word, a fraction
+          of a work, a syllable, or a character.
+          <br />
+          <br />
+          <Label>This is your text as a sequence of token strings:</Label>
+          <Code>{JSON.stringify(tokenStrings)}</Code>
+          <br />
           <br />
           To make the connection between the token ids and the token strings
           clearer, this is a table that shows the mapping:
