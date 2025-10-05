@@ -32,7 +32,7 @@ export default function RootLayout({
         <div className="flex min-h-screen flex-col md:flex-row">
           {/* Sidebar */}
           <aside className="w-64 border-r p-6 md:block hidden bg-gray-50 dark:bg-gray-900">
-            <div className="flex flex-col gap-4">
+            <div className="flex flex-col gap-4 mt-4">
               <a
                 href="https://www.stefanwille.com"
                 target="_blank"
