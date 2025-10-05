@@ -22,7 +22,7 @@ export function HomeComponent() {
           LLM Tokens Playground
         </h1>
         <p className="text-lg font-normal text-gray-500 lg:text-xl dark:text-gray-400">
-          A playground that makes LLM tokens more tangible
+          A playground that makes LLM tokens easier to understand.
         </p>
         <div className="mb-12"></div>
       </header>

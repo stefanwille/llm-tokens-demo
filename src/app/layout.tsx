@@ -15,8 +15,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "LLM Tokens Demo | Stefan Wille, Berlin",
-  description: "A demonstration that makes LLM tokens more tangible.",
+  title: "LLM Tokens Playground | Stefan Wille, Berlin",
+  description: "A playground that makes LLM tokens easier to understand.",
 };
 
 export default function RootLayout({
