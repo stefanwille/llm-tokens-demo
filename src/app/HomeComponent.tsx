@@ -7,13 +7,13 @@ import { Input } from "@/components/ui/input";
 import { Code } from "@/app/Code";
 import { TokensTable } from "./TokensTable";
 
-const encoder = new Tiktoken(o200k_base);
+const Tokenizer = new Tiktoken(o200k_base);
 
 export function HomeComponent() {
   const [inputText, setInputText] = useState("How are you today?");
 
-  const tokenIDs = encoder.encode(inputText);
-  const tokenStrings = tokenIDs.flatMap((token) => encoder.decode([token]));
+  const tokenIDs = Tokenizer.encode(inputText);
+  const tokenStrings = tokenIDs.flatMap((token) => Tokenizer.decode([token]));
 
   return (
     <div className="">
